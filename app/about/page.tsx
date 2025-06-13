@@ -132,7 +132,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="mx-auto mb-12 max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight">Our Leadership Team</h2>
@@ -140,7 +140,7 @@ export default function AboutPage() {
               Meet the experts guiding Calebyte Health & Innovations toward a healthier future.
             </p>
           </div>
-          {/* <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <div className="text-center">
               <div className="mx-auto mb-4 h-40 w-40 overflow-hidden rounded-full">
                 <Image
@@ -189,9 +189,9 @@ export default function AboutPage() {
                 Board-certified physician with expertise in clinical workflows and patient care.
               </p>
             </div>
-          </div> */}
+          </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Approach */}
       <section className="bg-muted/30 py-20">
