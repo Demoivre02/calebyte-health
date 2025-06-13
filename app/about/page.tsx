@@ -140,7 +140,7 @@ export default function AboutPage() {
               Meet the experts guiding Calebyte Health & Innovations toward a healthier future.
             </p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {/* <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <div className="text-center">
               <div className="mx-auto mb-4 h-40 w-40 overflow-hidden rounded-full">
                 <Image
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 Board-certified physician with expertise in clinical workflows and patient care.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
