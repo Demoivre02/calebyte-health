@@ -8,33 +8,68 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="bg-muted/50 py-20">
         <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">About Calebyte Health & Innovations</h1>
-            <div className="flex flex-col items-center justify-center space-y-4 gap-4 ">
-              <p className="text-md text-wrap text-justify text-muted-foreground">
-                                Who We Are
-                  Calebyte Health & Innovations is a trailblazing health technology and innovation company driving the next wave of healthcare transformation in Africa. Founded by regulatory and clinical research experts, our mission is to build scalable, sustainable, and globally integrated clinical trial ecosystems starting in Ethiopia. <br/> <br />
-
-                  Our multidisciplinary team brings expertise in regulatory science, oncology drug development, AI-driven health solutions, and healthcare infrastructure. Through our flagship Contract Research Organization (CRO), Calebyte BioSolutions, we empower global biotech, pharma, and academic partners to conduct high-quality clinical trials in African populations—helping bridge equity gaps and accelerating access to life-saving therapies. <br /> <br />
-
-                  We believe Africa holds untapped potential to be a critical contributor to global health innovation, and we’re building the digital and physical foundations to make that vision a reality.
-              </p>
-                <div className="text-md text-wrap text-center text-muted-foreground">
-                <p className="text-xl text-primary my-2 font-bold text-center">Vision</p>
-                    To be Africa’s leading catalyst for data-driven healthcare innovation and global clinical research partnerships.
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="space-y-6">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-left text-center">About Calebyte Health & Innovations</h1>
+              
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-xl font-bold text-primary mb-3">Who We Are</h2>
+                  <p className="text-muted-foreground text-justify">
+                    Calebyte Health & Innovations is a trailblazing health technology and innovation company driving the next wave of healthcare transformation in Africa. Founded by regulatory and clinical research experts, our mission is to build scalable, sustainable, and globally integrated clinical trial ecosystems starting in Ethiopia.
+                  </p>
                 </div>
-              <div>
-              <div className="text-md text-wrap text-center text-muted-foreground">
-                <p className="text-xl text-primary font-bold text-center my-2">Mission</p>
-                <ul className="">
-                  <li>Enable and scale clinical trials across Africa.</li>
-                  <li>Build sustainable local health innovation capacity.</li>
-                  <li>Harness data and AI to drive healthcare breakthroughs.</li>
-                  <li>Bridge global pharma and biotech with African trial sites.</li>
-                  
                 
-                </ul>
-                </div>
+                <p className="text-muted-foreground text-justify">
+                  Our multidisciplinary team brings expertise in regulatory science, oncology drug development, AI-driven health solutions, and healthcare infrastructure. Through our flagship Contract Research Organization (CRO), Calebyte BioSolutions, we empower global biotech, pharma, and academic partners to conduct high-quality clinical trials in African populations—helping bridge equity gaps and accelerating access to life-saving therapies.
+                </p>
+                
+                <p className="text-muted-foreground text-justify">
+                  We believe Africa holds untapped potential to be a critical contributor to global health innovation, and we're building the digital and physical foundations to make that vision a reality.
+                </p>
+              </div>
+            </div>
+            
+            <div className="relative h-[500px] w-full overflow-hidden rounded-lg lg:order-2">
+              <Image 
+                src="/about-us.jpg" 
+                alt="Calebyte Health & Innovations team and mission" 
+                fill 
+                className="object-cover" 
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision & Mission */}
+      <section className="py-20">
+        <div className="container">
+          <div className="grid gap-12 md:grid-cols-2">
+            <div className="text-center space-y-4">
+              <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <Target className="h-8 w-8 text-primary" />
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight">Our Vision</h2>
+              <div className="space-y-3 text-muted-foreground">
+                <p>Transform Africa into a global healthcare innovation hub</p>
+                <p>Lead data-driven clinical research across the continent</p>
+                <p>Foster sustainable partnerships with global healthcare leaders</p>
+                <p>Advance health equity through accessible medical breakthroughs</p>
+              </div>
+            </div>
+            
+            <div className="text-center space-y-4">
+              <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <Award className="h-8 w-8 text-primary" />
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
+              <div className="space-y-3 text-muted-foreground">
+                <p>Enable and scale clinical trials across Africa</p>
+                <p>Build sustainable local health innovation capacity</p>
+                <p>Harness data and AI to drive healthcare breakthroughs</p>
+                <p>Bridge global pharma and biotech with African trial sites</p>
               </div>
             </div>
           </div>
@@ -42,7 +77,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
@@ -67,7 +102,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Values */}
       <section className="bg-muted/30 py-20">
@@ -216,7 +251,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
-              <Image src="approach.jpg" alt="Our approach" fill className="object-cover" />
+              <Image src="hands.jpg" alt="Our approach" fill className="object-cover" />
             </div>
           </div>
         </div>

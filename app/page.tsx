@@ -29,7 +29,7 @@ export default function Home() {
             </div>
             <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
               <Image
-                src="/hero.png"
+                src="/hero.jpg"
                 alt="Building Africa's clinical research infrastructure"
                 fill
                 className="object-cover"
@@ -49,7 +49,7 @@ export default function Home() {
               We combine healthcare expertise with technological innovation to deliver exceptional solutions.
             </p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
             <Card>
               <CardHeader>
                 <HeartPulse className="h-10 w-10 text-primary" />
@@ -73,7 +73,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card>
+            {/* <Card>
               <CardHeader>
                 <Stethoscope className="h-10 w-10 text-primary" />
                 <CardTitle className="mt-4">Clinical Excellence</CardTitle>
@@ -83,7 +83,7 @@ export default function Home() {
                   Our team of healthcare professionals ensures all solutions meet the highest clinical standards.
                 </CardDescription>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </section>
@@ -97,21 +97,21 @@ export default function Home() {
               Comprehensive healthcare solutions designed to meet your specific needs.
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-3">
             <div className="space-y-4 rounded-lg border bg-background p-6">
-              <h3 className="text-xl font-bold">Health Technology Solutions</h3>
+              <h3 className="text-xl font-bold">Clinical Trial Services</h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Telehealth platforms</span>
+                  <span>Trial feasibility and site readiness</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Remote patient monitoring</span>
+                  <span>Clinical trial management & monitoring</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Healthcare data analytics</span>
+                  <span>Regulatory strategy & submissions</span>
                 </li>
               </ul>
               <Button variant="outline" className="mt-2" asChild>
@@ -121,19 +121,19 @@ export default function Home() {
               </Button>
             </div>
             <div className="space-y-4 rounded-lg border bg-background p-6">
-              <h3 className="text-xl font-bold">Healthcare Consulting</h3>
+              <h3 className="text-xl font-bold">Health Data and Clinical Solutions</h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Operational efficiency</span>
+                  <span>Health data collection & analytics</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Technology implementation</span>
+                  <span>AI-driven insights for clinical interventions</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Regulatory compliance</span>
+                  <span>Custom digital health tools</span>
                 </li>
               </ul>
               <Button variant="outline" className="mt-2" asChild>
@@ -142,6 +142,29 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
+            <div className="space-y-4 rounded-lg border bg-background p-6">
+              <h3 className="text-xl font-bold">Capacity Building & Advisory</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Regulatory capacity building for agencies</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Global regulatory alignment consulting</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Training programs for trial personnel</span>
+                </li>
+              </ul>
+              <Button variant="outline" className="mt-2" asChild>
+                <Link href="/services" className="inline-flex items-center gap-2">
+                  Learn More <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+
           </div>
         </div>
       </section>
@@ -162,10 +185,10 @@ export default function Home() {
                   "Calebyte's telehealth solution transformed our practice, allowing us to reach more patients while
                   maintaining high-quality care."
                 </p>
-                <div>
+                {/* <div>
                   <p className="font-semibold">Dr. Sarah Johnson</p>
                   <p className="text-sm text-muted-foreground">Medical Director, Wellness Medical Group</p>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
             <Card>
@@ -174,10 +197,10 @@ export default function Home() {
                   "Their healthcare analytics platform provided insights that helped us reduce costs by 23% while
                   improving patient outcomes."
                 </p>
-                <div>
+                {/* <div>
                   <p className="font-semibold">Michael Chen</p>
                   <p className="text-sm text-muted-foreground">CTO, Regional Health System</p>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
             <Card>
@@ -186,10 +209,10 @@ export default function Home() {
                   "Calebyte's consulting team guided us through a complex digital transformation with expertise and
                   professionalism."
                 </p>
-                <div>
+                {/* <div>
                   <p className="font-semibold">Lisa Rodriguez</p>
                   <p className="text-sm text-muted-foreground">CEO, Community Health Partners</p>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           </div>

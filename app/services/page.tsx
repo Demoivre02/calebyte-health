@@ -24,78 +24,77 @@ export default function ServicesPage() {
         <div className="container">
           <div className="grid gap-16">
             {/* Service 1 */}
-            <div className="grid gap-8 md:grid-cols-2 md:items-center">
-              <div className="relative h-[600px] w-full overflow-hidden rounded-lg md:order-2">
-                <Image
-                  src="/telehealth.jpg"
-                  alt="Health Technology Solutions"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-4 md:order-1">
-                <h2 className="text-3xl font-bold tracking-tight">Health Technology Solutions</h2>
-                <p className="text-muted-foreground">
-                  <span className="font-bold"> What We Do</span>  <br /> 
-                      Clinical Trial Services (Calebyte BioSolutions): <br />
-                      <span className="text-sm">
-                      - Trial feasibility and site readiness in Ethiopia and other African markets. <br />
-                      - Clinical trial management and monitoring. <br />
-                      - Regulatory strategy and submissions (aligned with EFDA, USFDA, EMA). <br />
-                      - Biostatistics, data management, and digital platforms for trials. <br />
-                      - Pharmacovigilance and safety reporting. <br />
-                      - Local workforce development and training. <br /> <br /> 
-                      </span>
-                      <span className="font-bold">Health Data & Digital Solutions: </span> <br />
-
-                      <span className="text-sm">
-                      - Health data collection, curation, and analytics for African populations. <br />
-                      - AI-driven insights for clinical and public health interventions. <br />
-                      - Custom digital health tools for clinical trial support. <br /> <br />
-                      </span>
-
-                      <span className="font-bold">Capacity Building & Advisory:</span> <br />
-                      <span className="text-sm">
-                      - Regulatory capacity building for African agencies (EFDA and others). <br />
-                      - Consulting on global regulatory alignment. <br />
-                      - Training programs for trial site personnel and CRO partners. <br /> <br />
-                    </span>
+            <div className="space-y-8">
+              <div className="text-center max-w-3xl mx-auto">
+                <h2 className="text-3xl font-bold tracking-tight mb-4">Health Technology Solutions</h2>
+                <p className="text-lg text-muted-foreground">
+                  Comprehensive healthcare technology services driving clinical research and innovation across Africa.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="font-medium">Telehealth Platforms</p>
-                      <p className="text-sm text-muted-foreground">
-                        Secure, user-friendly virtual care solutions that connect providers and patients.
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="font-medium">Remote Patient Monitoring</p>
-                      <p className="text-sm text-muted-foreground">
-                        Systems that enable continuous tracking of patient health metrics outside traditional care
-                        settings.
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="font-medium">Healthcare Data Analytics</p>
-                      <p className="text-sm text-muted-foreground">
-                        Advanced analytics tools that transform healthcare data into actionable insights.
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-                <Button asChild>
-                  <Link href="/contact" className="inline-flex items-center gap-2">
-                    Learn More <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
+              </div>
+              
+              <div className="flex flex-col lg:flex-row gap-8 lg:items-start">
+                <div className="flex-1 space-y-4">
+                  <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+                    <Card className="border-l-4 border-l-primary">
+                      <CardHeader className="pb-2">
+                        <CardTitle className="text-lg">Clinical Trial Services</CardTitle>
+                        <CardDescription className="text-sm">Calebyte BioSolutions - End-to-end clinical trial management</CardDescription>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <div className="text-sm text-muted-foreground space-y-1">
+                          <p>• Trial feasibility and site readiness • Clinical trial management</p>
+                          <p>• Regulatory strategy (EFDA, USFDA, EMA) • Biostatistics & data management</p>
+                          <p>• Pharmacovigilance • Local workforce development</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card className="border-l-4 border-l-primary">
+                      <CardHeader className="pb-2">
+                        <CardTitle className="text-lg">Health Data & Digital Solutions</CardTitle>
+                        <CardDescription className="text-sm">AI-driven insights and digital health tools</CardDescription>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <div className="text-sm text-muted-foreground space-y-1">
+                          <p>• Health data collection & analytics for African populations</p>
+                          <p>• AI-driven insights for clinical interventions</p>
+                          <p>• Custom digital health tools for clinical trial support</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card className="border-l-4 border-l-primary">
+                      <CardHeader className="pb-2">
+                        <CardTitle className="text-lg">Capacity Building & Advisory</CardTitle>
+                        <CardDescription className="text-sm">Strategic consulting and training programs</CardDescription>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <div className="text-sm text-muted-foreground space-y-1">
+                          <p>• Regulatory capacity building for African agencies</p>
+                          <p>• Global regulatory alignment consulting</p>
+                          <p>• Training programs for trial personnel and CRO partners</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  
+                  <Button asChild className="w-fit">
+                    <Link href="/contact" className="inline-flex items-center gap-2">
+                      Learn More <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+                
+                <div className="flex-shrink-0 lg:w-1/2">
+                  <div className="relative h-[575px] w-full overflow-hidden rounded-lg">
+                    <Image
+                      src="/telehealth-1.jpg"
+                      alt="Health Technology Solutions - Clinical research and healthcare innovation"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -103,7 +102,7 @@ export default function ServicesPage() {
             <div className="grid gap-8 md:grid-cols-2 md:items-center">
               <div className="relative h-[300px] w-full overflow-hidden rounded-lg">
                 <Image
-                  src="/conference.jpg"
+                  src="/black.jpeg"
                   alt="Healthcare Consulting"
                   fill
                   className="object-cover"
