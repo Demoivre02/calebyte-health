@@ -45,14 +45,18 @@ export default function AboutPage() {
 
       {/* Vision & Mission */}
       <section className="py-20">
-        <div className="container">
+        <div className="container w-[90%] mx-auto">
           <div className="grid gap-12 md:grid-cols-2">
-            <div className="text-center space-y-4">
-              <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                <Target className="h-8 w-8 text-primary" />
+            <div className="text-center space-y-4 mr-auto">
+
+              <div className="mr-auto max-w-[170px]">
+                <div className="mr-auto  w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                  <Target className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-3xl font-bold tracking-tight">Our Vision</h2>
               </div>
-              <h2 className="text-3xl font-bold tracking-tight">Our Vision</h2>
-              <div className="space-y-3 text-muted-foreground">
+
+              <div className="space-y-3 text-left text-muted-foreground">
                 <p>Transform Africa into a global healthcare innovation hub</p>
                 <p>Lead data-driven clinical research across the continent</p>
                 <p>Foster sustainable partnerships with global healthcare leaders</p>
@@ -60,12 +64,16 @@ export default function AboutPage() {
               </div>
             </div>
             
-            <div className="text-center space-y-4">
-              <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                <Award className="h-8 w-8 text-primary" />
+            <div className="text-center space-y-4 ml-auto ">
+
+              <div className="ml-auto  max-w-[170px]">
+                <div className="ml-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                  <Award className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
               </div>
-              <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
-              <div className="space-y-3 text-muted-foreground">
+
+              <div className="space-y-3 text-right text-muted-foreground mx-auto">
                 <p>Enable and scale clinical trials across Africa</p>
                 <p>Build sustainable local health innovation capacity</p>
                 <p>Harness data and AI to drive healthcare breakthroughs</p>

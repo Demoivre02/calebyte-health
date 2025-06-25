@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Calendar, User } from "lucide-react"
+import { ArrowRight, BookOpen, Brain, FileText, Calendar, BarChart3, HelpCircle, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -70,6 +70,7 @@ const blogPosts = [
 ]
 
 export default function InsightsPage() {
+
   return (
     <div>
       {/* Hero Section */}
@@ -131,45 +132,148 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* Blog Posts */}
-      <section className="bg-muted/30 py-20">
+      {/* Insight Tabs */}
+      <section className="py-20">
         <div className="container">
-          <div className="mb-12 flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <h2 className="text-3xl font-bold tracking-tight">Latest Articles</h2>
-            <div className="w-full sm:max-w-xs">
-              <Input placeholder="Search articles..." />
-            </div>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight">Explore Our Insights</h2>
+            <p className="text-lg text-muted-foreground">
+              Click on any category below to explore our comprehensive insights and resources.
+            </p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post) => (
-              <Card key={post.id} className="overflow-hidden">
-                <div className="relative h-48 w-full">
-                  <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span className="rounded-full bg-primary/10 px-3 py-1 text-primary">{post.category}</span>
-                    <span className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" /> {post.date}
-                    </span>
+          
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="group cursor-pointer transition-all hover:shadow-lg hover:shadow-primary/20 border-2 hover:border-primary/50">
+              <Link href="/insights/featured-research">
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20">
+                    <BookOpen className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="line-clamp-2">{post.title}</CardTitle>
-                  <CardDescription className="line-clamp-3">{post.excerpt}</CardDescription>
+                  <CardTitle>📚 Featured Research</CardTitle>
+                  <CardDescription>Open Access Articles & Reports</CardDescription>
                 </CardHeader>
-                <CardFooter className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <User className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm text-muted-foreground">{post.author}</span>
+                <CardContent>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <p>• AI in Global Health</p>
+                    <p>• Digital Health in Africa</p>
+                    <p>• Clinical Research Capacity</p>
                   </div>
-                  <Button variant="ghost" size="sm" asChild>
-                    <Link href={`/insights/${post.slug}`}>Read More</Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Button variant="outline">Load More Articles</Button>
+                  <div className="mt-4 flex items-center text-sm font-medium text-primary group-hover:underline">
+                    Explore Research <ArrowRight className="ml-1 h-4 w-4" />
+                  </div>
+                </CardContent>
+              </Link>
+            </Card>
+
+            <Card className="group cursor-pointer transition-all hover:shadow-lg hover:shadow-primary/20 border-2 hover:border-primary/50">
+              <Link href="/insights/expert-insights">
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20">
+                    <Brain className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle>🧠 Expert Insights</CardTitle>
+                  <CardDescription>Blogs & Opinion Articles</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <p>• AI in Clinical Trials</p>
+                    <p>• Traditional & Modern Medicine</p>
+                    <p>• Industry Expert Opinions</p>
+                  </div>
+                  <div className="mt-4 flex items-center text-sm font-medium text-primary group-hover:underline">
+                    Read Insights <ArrowRight className="ml-1 h-4 w-4" />
+                  </div>
+                </CardContent>
+              </Link>
+            </Card>
+
+            <Card className="group cursor-pointer transition-all hover:shadow-lg hover:shadow-primary/20 border-2 hover:border-primary/50">
+              <Link href="/insights/toolkits-templates">
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20">
+                    <FileText className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle>📘 Toolkits & Templates</CardTitle>
+                  <CardDescription>Practical Resources & Tools</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <p>• Digital Health Implementation</p>
+                    <p>• Health Data Governance</p>
+                    <p>• Regulatory Systems</p>
+                  </div>
+                  <div className="mt-4 flex items-center text-sm font-medium text-primary group-hover:underline">
+                    Access Tools <ArrowRight className="ml-1 h-4 w-4" />
+                  </div>
+                </CardContent>
+              </Link>
+            </Card>
+
+            <Card className="group cursor-pointer transition-all hover:shadow-lg hover:shadow-primary/20 border-2 hover:border-primary/50">
+              <Link href="/insights/upcoming-events">
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20">
+                    <Calendar className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle>📅 Upcoming Events</CardTitle>
+                  <CardDescription>Webinars & Conferences</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <p>• Global Digital Health Forum</p>
+                    <p>• Africa Health Agenda</p>
+                    <p>• Industry Conferences</p>
+                  </div>
+                  <div className="mt-4 flex items-center text-sm font-medium text-primary group-hover:underline">
+                    View Events <ArrowRight className="ml-1 h-4 w-4" />
+                  </div>
+                </CardContent>
+              </Link>
+            </Card>
+
+            <Card className="group cursor-pointer transition-all hover:shadow-lg hover:shadow-primary/20 border-2 hover:border-primary/50">
+              <Link href="/insights/project-spotlights">
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20">
+                    <BarChart3 className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle>📊 Project Spotlights</CardTitle>
+                  <CardDescription>Case Studies & Success Stories</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <p>• mTrac in Uganda</p>
+                    <p>• SmartCare in Zambia</p>
+                    <p>• Real-world Implementations</p>
+                  </div>
+                  <div className="mt-4 flex items-center text-sm font-medium text-primary group-hover:underline">
+                    View Projects <ArrowRight className="ml-1 h-4 w-4" />
+                  </div>
+                </CardContent>
+              </Link>
+            </Card>
+
+            <Card className="group cursor-pointer transition-all hover:shadow-lg hover:shadow-primary/20 border-2 hover:border-primary/50">
+              <Link href="/insights/understanding-our-work">
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20">
+                    <HelpCircle className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle>📖 Understanding Our Work</CardTitle>
+                  <CardDescription>Explainers & FAQs</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <p>• Pharmacovigilance Introduction</p>
+                    <p>• AI in Public Health</p>
+                    <p>• Regulatory Science Basics</p>
+                  </div>
+                  <div className="mt-4 flex items-center text-sm font-medium text-primary group-hover:underline">
+                    Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                  </div>
+                </CardContent>
+              </Link>
+            </Card>
           </div>
         </div>
       </section>

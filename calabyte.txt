@@ -1,0 +1,57 @@
+📚 Featured Research (Open Access Articles & Reports)
+	1	AI in Global Health
+	•	The Role of Artificial Intelligence in Achieving the Sustainable Development Goals
+	•	Read on The Lancet Digital Health (Open Access)
+	2	Digital Health in Africa
+	•	The State of Digital Health in Africa
+	•	Download from WHO Africa
+	3	Clinical Research Capacity in Africa
+	•	Building Clinical Trial Capacity in Low-Resource Settings
+	•	Read on BMC Trials (Open Access)
+	4	Data Science for Health Equity
+	•	Ethical and Inclusive Data Science for African Health Systems
+	•	Read via Frontiers in Digital Health
+
+🧠 Expert Insights (Blogs & Opinion Articles)
+	1	AI in Clinical Trials
+	•	How AI is Reshaping Clinical Research
+	•	Blog by Harvard Health
+	2	Bridging Traditional and Modern Medicine
+	•	The Integration of African Traditional Medicine into National Health Systems
+	•	WHO Bulletin Article
+
+📘 Toolkits & Templates
+	1	Digital Health Implementation Toolkit
+	•	From PATH and the Digital Square Initiative
+	•	Access the Toolkit
+	2	Health Data Governance Principles
+	•	By Global Partnership for Sustainable Development Data
+	•	Explore the Framework
+	3	Regulatory Systems Strengthening Guide
+	•	WHO Global Benchmarking Tool (GBT) for Regulatory Systems
+	•	Download the Guide
+
+📅 Upcoming Webinars & Events
+	1	Global Digital Health Forum (Annually in December)
+	•	Offers free virtual sessions and open-access recordings
+	•	Visit Event Page
+	2	Africa Health Agenda International Conference (AHAIC)
+	•	Includes sessions on digital health, policy, and innovation
+	•	Visit Website
+
+📊 Project Spotlights (Case Studies from Similar Work)
+	1	mTrac in Uganda
+	•	Mobile health system for real-time disease reporting
+	•	Case Study by WHO
+	2	SmartCare in Zambia
+	•	National-level electronic health record system
+	•	Read on CDC Global Health
+
+📖 Understanding Our Work (Explainers & FAQs)
+	1	Pharmacovigilance: An Introduction
+	•	From WHO Uppsala Monitoring Centre
+	2	AI in Public Health: Key Concepts
+	•	CDC AI Overview
+	3	Regulatory Science Basics
+	•	NIH’s Introduction to Regulatory Science
+

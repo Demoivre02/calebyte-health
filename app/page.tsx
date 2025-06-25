@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CheckCircle, HeartPulse, Lightbulb, Stethoscope } from "lucide-react"
+import { ArrowRight, CheckCircle, HeartPulse, Lightbulb, Stethoscope, Zap, Heart, Shield, Shuffle, Target, Brain } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -44,46 +44,78 @@ export default function Home() {
       <section className="py-20">
         <div className="container">
           <div className="mx-auto mb-12 max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Why Choose Calebyte Health</h2>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Why Choose Us</h2>
             <p className="text-lg text-muted-foreground">
-              We combine healthcare expertise with technological innovation to deliver exceptional solutions.
+              We combine healthcare expertise with technological innovation to deliver exceptional solutions for Africa.
             </p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <Card>
               <CardHeader>
-                <HeartPulse className="h-10 w-10 text-primary" />
-                <CardTitle className="mt-4">Patient-Centered Care</CardTitle>
+                <Zap className="h-10 w-10 text-primary" />
+                <CardTitle className="mt-4">Innovation</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Our solutions prioritize patient needs, improving outcomes and satisfaction through personalized care
-                  approaches.
+                  We develop smart, scalable health technologies that solve real-world challenges.
                 </CardDescription>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <Lightbulb className="h-10 w-10 text-primary" />
-                <CardTitle className="mt-4">Innovative Technology</CardTitle>
+                <Heart className="h-10 w-10 text-primary" />
+                <CardTitle className="mt-4">Vitality</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  We leverage cutting-edge technologies to create solutions that address complex healthcare challenges.
+                  Our solutions promote holistic well-being rooted in tradition and science.
                 </CardDescription>
               </CardContent>
             </Card>
-            {/* <Card>
+            <Card>
               <CardHeader>
-                <Stethoscope className="h-10 w-10 text-primary" />
-                <CardTitle className="mt-4">Clinical Excellence</CardTitle>
+                <Shield className="h-10 w-10 text-primary" />
+                <CardTitle className="mt-4">Trust</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Our team of healthcare professionals ensures all solutions meet the highest clinical standards.
+                  Built on transparency, quality, and a commitment to ethical healthcare.
                 </CardDescription>
               </CardContent>
-            </Card> */}
+            </Card>
+            <Card>
+              <CardHeader>
+                <Shuffle className="h-10 w-10 text-primary" />
+                <CardTitle className="mt-4">Integration</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Bridging modern medicine with Africa's rich herbal and healing knowledge.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <Target className="h-10 w-10 text-primary" />
+                <CardTitle className="mt-4">Impact</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Designed to uplift communities and transform healthcare access across Africa.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <Brain className="h-10 w-10 text-primary" />
+                <CardTitle className="mt-4">Intelligence</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Driven by data, insights, and artificial intelligence to optimize health outcomes.
+                </CardDescription>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
