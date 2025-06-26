@@ -10,28 +10,32 @@ export default function FeaturedResearchPage() {
       bullets: [
         "The Role of Artificial Intelligence in Achieving the Sustainable Development Goals",
         "Read on The Lancet Digital Health (Open Access)"
-      ]
+      ],
+      link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6957485/"
     },
     {
       title: "Digital Health in Africa",
       bullets: [
         "The State of Digital Health in Africa",
         "Download from WHO Africa"
-      ]
+      ],
+      link:"https://www.iqvia.com/-/media/iqvia/pdfs/mea/white-paper/iqvia-digital-health-system-maturity-in-africa.pdf"
     },
     {
       title: "Clinical Research Capacity in Africa",
       bullets: [
         "Building Clinical Trial Capacity in Low-Resource Settings",
         "Read on BMC Trials (Open Access)"
-      ]
+      ],
+      link:"https://ahpworkforce.com/research-capacity-building/building-research-capacity-in-low-resource-settings/"
     },
     {
       title: "Data Science for Health Equity",
       bullets: [
         "Ethical and Inclusive Data Science for African Health Systems",
         "Read via Frontiers in Digital Health"
-      ]
+      ],
+      link:"https://www.fic.nih.gov/News/GlobalHealthMatters/september-october-2020/Pages/data-science-in-africa-dsiafrica-elsi.aspx"
     }
   ];
 
@@ -67,13 +71,16 @@ export default function FeaturedResearchPage() {
                     {item.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex} className="text-base font-normal text-muted-foreground">
                         {bullet.includes("Read on") || bullet.includes("Download") || bullet.includes("Read via") ? (
-                          <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
-                            {bullet} <ExternalLink className="h-3 w-3" />
-                          </span>
+                          <Link href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">
+                            <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
+                              {bullet} <ExternalLink className="h-3 w-3" />
+                            </span>
+                          </Link>
                         ) : (
                           bullet
                         )}
                       </li>
+                      
                     ))}
                   </ul>
                 </li>

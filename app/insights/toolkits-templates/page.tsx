@@ -9,21 +9,24 @@ export default function ToolkitsTemplatesPage() {
       bullets: [
         "From PATH and the Digital Square Initiative",
         "Access the Toolkit"
-      ]
+      ],
+      link:"https://digitalsquare.org/"
     },
     {
       title: "Health Data Governance Principles",
       bullets: [
         "By Global Partnership for Sustainable Development Data",
         "Explore the Framework"
-      ]
+      ],
+      link:"https://www.data4sdgs.org/resources"
     },
     {
       title: "Regulatory Systems Strengthening Guide",
       bullets: [
         "WHO Global Benchmarking Tool (GBT) for Regulatory Systems",
         "Download the Guide"
-      ]
+      ],
+      link:"https://www.who.int/tools/global-benchmarking-tools"
     }
   ];
 
@@ -59,9 +62,11 @@ export default function ToolkitsTemplatesPage() {
                     {item.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex} className="text-base font-normal text-muted-foreground">
                         {bullet.includes("Access") || bullet.includes("Explore") || bullet.includes("Download") ? (
+                          <Link href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">
                           <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
                             {bullet} <ExternalLink className="h-3 w-3" />
                           </span>
+                          </Link>
                         ) : (
                           bullet
                         )}

@@ -9,21 +9,24 @@ export default function ToolkitsTemplatesPage() {
       bullets: [
         "From WHO Uppsala Monitoring Centre",
         "Access the Toolkit"
-      ]
+      ],
+      link:"https://who-umc.org/education-and-training/self-paced-online-courses/"
     },
     {
       title: "AI in Public Health: Key Concepts",
       bullets: [
         "CDC AI Overview",
         "Explore the Framework"
-      ]
+      ],
+      "link":"https://www.cdc.gov/surveillance/data-modernization/technologies/ai-ml.html#:~:text=Artificial%20Intelligence%20and%20Machine%20Learning:%20Applying%20Advanced%20Tools%20for%20Public%20Health&amp;text=CDC&#39;s%20Data%20Modernization%20Initiative%20supports,AI%20is%20based%20on%20ML."
     },
     {
       title: "Regulatory Science Basics",
       bullets: [
         "NIH’s Introduction to Regulatory Science",
-        "Acess the Guide"
-      ]
+        "Access the Guide"
+      ],
+      link:"https://www.ncbi.nlm.nih.gov/sites/books/NBK379030/"
     }
   ];
 
@@ -59,9 +62,11 @@ export default function ToolkitsTemplatesPage() {
                     {item.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex} className="text-base font-normal text-muted-foreground">
                         {bullet.includes("Access") || bullet.includes("Explore") || bullet.includes("Download") ? (
-                          <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
-                            {bullet} <ExternalLink className="h-3 w-3" />
-                          </span>
+                          <Link href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">
+                            <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
+                              {bullet} <ExternalLink className="h-3 w-3" />
+                            </span>
+                          </Link>
                         ) : (
                           bullet
                         )}

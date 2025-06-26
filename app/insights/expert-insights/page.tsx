@@ -9,14 +9,16 @@ export default function ExpertInsightsPage() {
       bullets: [
         "How AI is Reshaping Clinical Research",
         "Blog by Harvard Health"
-      ]
+      ],
+      link:"https://learn.hms.harvard.edu/insights/all-insights/ai-clinical-research-opportunities-limitations-and-what-comes-next"
     },
     {
       title: "Bridging Traditional and Modern Medicine",
       bullets: [
         "The Integration of African Traditional Medicine into National Health Systems",
         "WHO Bulletin Article"
-      ]
+      ],
+      link:"https://pmc.ncbi.nlm.nih.gov/articles/PMC11204987/"
     }
   ];
 
@@ -52,9 +54,11 @@ export default function ExpertInsightsPage() {
                     {item.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex} className="text-base font-normal text-muted-foreground">
                         {bullet.includes("Blog by") || bullet.includes("Article") ? (
-                          <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
-                            {bullet} <ExternalLink className="h-3 w-3" />
-                          </span>
+                          <Link href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">
+                            <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
+                              {bullet} <ExternalLink className="h-3 w-3" />
+                            </span>
+                          </Link>
                         ) : (
                           bullet
                         )}

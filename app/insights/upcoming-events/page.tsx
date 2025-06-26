@@ -9,14 +9,16 @@ export default function UpcomingEventsPage() {
       bullets: [
         "Offers free virtual sessions and open-access recordings",
         "Visit Event Page"
-      ]
+      ],
+      link:"https://www.gdhf.digital/"
     },
     {
       title: "Africa Health Agenda International Conference (AHAIC)",
       bullets: [
         "Includes sessions on digital health, policy, and innovation",
         "Visit Website"
-      ]
+      ],
+      link:"https://www.gdhf.digital/"
     }
   ];
 
@@ -52,9 +54,11 @@ export default function UpcomingEventsPage() {
                     {item.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex} className="text-base font-normal text-muted-foreground">
                         {bullet.includes("Visit") ? (
-                          <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
-                            {bullet} <ExternalLink className="h-3 w-3" />
-                          </span>
+                          <Link href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">
+                            <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
+                              {bullet} <ExternalLink className="h-3 w-3" />
+                            </span>
+                          </Link>
                         ) : (
                           bullet
                         )}

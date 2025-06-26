@@ -5,19 +5,20 @@ import { Button } from "@/components/ui/button"
 export default function ToolkitsTemplatesPage() {
   const toolkitItems = [
     {
-      title: "Project Spotlights",
+      title: "mTrac in Uganda",
       bullets: [
-        "mTrac in Uganda",
         "Mobile health system for real-time disease reporting",
         " Access Case Study by WHO"
-      ]
+      ],
+      link:"https://www.unicef.org/uganda/what-we-do/mtrac"
     },
     {
       title: "SmartCare in Zambia",
       bullets: [
         "National-level electronic health record system",
         "Explore CDC Global Health"
-      ]
+      ],
+      link:"https://smartcarezambia.io/"
     }
   ];
 
@@ -53,9 +54,11 @@ export default function ToolkitsTemplatesPage() {
                     {item.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex} className="text-base font-normal text-muted-foreground">
                         {bullet.includes("Access") || bullet.includes("Explore") || bullet.includes("Download") ? (
-                          <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
-                            {bullet} <ExternalLink className="h-3 w-3" />
-                          </span>
+                          <Link href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline"> 
+                            <span className="inline-flex items-center gap-1 text-primary hover:underline cursor-pointer">
+                              {bullet} <ExternalLink className="h-3 w-3" />
+                            </span>
+                          </Link>
                         ) : (
                           bullet
                         )}
