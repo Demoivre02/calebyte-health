@@ -10,7 +10,7 @@ build:
       - echo "Building application..."
       - pnpm build
 run:
-  runtime-version: 18
+  runtime-version: 22.14.0
   command: pnpm start
   network:
     port: 3000
