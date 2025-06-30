@@ -1,15 +1,20 @@
 version: 1.0
-runtime: nodejs18
+runtime: nodejs14
 build:
   commands:
+    pre-build:
+      - n 22.14.0
+      - node --version
+      - npm --version
     build:
-      - echo "Installing dependencies with npm..."
-      - npm install
+      - echo "Installing pnpm..."
+      - npm install -g pnpm
+      - echo "Installing dependencies..."
+      - pnpm install --frozen-lockfile
       - echo "Building application..."
-      - npm run build
+      - pnpm build
 run:
-  runtime-version: 18.20.8
-  command: npm start
+  command: pnpm start
   network:
     port: 3000
     env: PORT
