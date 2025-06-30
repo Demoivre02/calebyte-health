@@ -1,0 +1,20 @@
+version: 1.0
+runtime: nodejs18
+build:
+  commands:
+    build:
+      - echo "Installing pnpm..."
+      - npm install -g pnpm
+      - echo "Installing dependencies..."
+      - pnpm install --frozen-lockfile
+      - echo "Building application..."
+      - pnpm build
+run:
+  runtime-version: 18
+  command: pnpm start
+  network:
+    port: 3000
+    env: PORT
+  env:
+    - name: NODE_ENV
+      value: production
