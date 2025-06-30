@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import Image from "next/image"
 import { useState } from "react"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -12,8 +11,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/hooks/use-toast"
-
-
+import DynamicMap from "@/components/ui/dynamic-map"
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -26,9 +24,16 @@ export default function ContactPage() {
     contactPreference: "email",
   })
 
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormState((prev) => ({ ...prev, [name]: value }))
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }))
+    }
   }
 
   const handleSelectChange = (value: string) => {
@@ -39,15 +44,56 @@ export default function ContactPage() {
     setFormState((prev) => ({ ...prev, contactPreference: value }))
   }
 
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {}
+    if (!formState.name.trim()) {
+        newErrors.name = "Name is required"
+    }
+    if (!formState.email.trim()) {
+        newErrors.email = "Email is required"
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formState.email)) {
+        newErrors.email = "Invalid email address"
+    }
+    if (!formState.message.trim()) {
+        newErrors.message = "Message is required"
+    }
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real application, you would send this data to your backend
-    console.log("Form submitted:", formState)
+    
+    if (!validateForm()) {
+        toast({
+            title: "Validation Error",
+            description: "Please fill in all required fields correctly.",
+        })
+        return
+    }
+
+    // Create email content
+    const subject = encodeURIComponent(`Contact Form Submission from ${formState.name}`)
+    const body = encodeURIComponent(
+      `Name: ${formState.name}\n` +
+      `Email: ${formState.email}\n` +
+      `Organization: ${formState.organization || 'N/A'}\n` +
+      `Phone: ${formState.phone || 'N/A'}\n` +
+      `Interest: ${formState.interest || 'N/A'}\n` +
+      `Preferred Contact Method: ${formState.contactPreference}\n\n` +
+      `Message:\n${formState.message}`
+    )
+    
+    // Open default email client with pre-filled information
+    const mailtoLink = `mailto:info@calebytehealth.com?subject=${subject}&body=${body}`
+    window.open(mailtoLink, '_self')
+    
     toast({
-      title: "Form submitted",
-      description: "We'll get back to you as soon as possible.",
+      title: "Email client opened",
+      description: "Your email client should open with the form data. Please send the email to complete your submission.",
     })
-    // Reset form
+    
+    // Reset form after opening email client
     setFormState({
       name: "",
       email: "",
@@ -57,6 +103,7 @@ export default function ContactPage() {
       message: "",
       contactPreference: "email",
     })
+    setErrors({}) // Clear errors after successful submission
   }
 
   return (
@@ -86,7 +133,7 @@ export default function ContactPage() {
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
+                    <Label htmlFor="name">Full Name *</Label>
                     <Input
                       id="name"
                       name="name"
@@ -94,10 +141,12 @@ export default function ContactPage() {
                       onChange={handleChange}
                       placeholder="John Doe"
                       required
+                      className={errors.name ? "border-red-500 focus:border-red-500" : ""}
                     />
+                    {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">Email *</Label>
                     <Input
                       id="email"
                       name="email"
@@ -106,7 +155,9 @@ export default function ContactPage() {
                       onChange={handleChange}
                       placeholder="john@example.com"
                       required
+                      className={errors.email ? "border-red-500 focus:border-red-500" : ""}
                     />
+                    {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
@@ -146,7 +197,7 @@ export default function ContactPage() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message">Message *</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -155,7 +206,9 @@ export default function ContactPage() {
                       placeholder="Tell us about your project or inquiry"
                       rows={4}
                       required
+                      className={errors.message ? "border-red-500 focus:border-red-500" : ""}
                     />
+                    {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
                   </div>
                   <div className="space-y-2">
                     <Label>Preferred contact method</Label>
@@ -193,9 +246,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium">Address</h3>
                       <p className="text-muted-foreground">
-                        123 Innovation Drive
+                        4220 Campbell Ave,
                         <br />
-                        Health City, HC 12345
+                        Arlington VA 22206
                         <br />
                         United States
                       </p>
@@ -208,9 +261,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium">Phone</h3>
                       <p className="text-muted-foreground">
-                        Main: (123) 456-7890
-                        <br />
-                        Support: (123) 456-7891
+                        <a href="tel:+12402039321" className="hover:underline">
+                          +1 (240) 203-9321
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -221,11 +274,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium">Email</h3>
                       <p className="text-muted-foreground">
-                        General: info@calebyte.com
-                        <br />
-                        Support: support@calebyte.com
-                        <br />
-                        Sales: sales@calebyte.com
+                        <a href="mailto:info@calebytehealth.com" className="hover:underline">
+                          info@calebytehealth.com
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -271,22 +322,11 @@ export default function ContactPage() {
           <div className="mx-auto mb-12 max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight">Visit Our Office</h2>
             <p className="text-lg text-muted-foreground">
-              We're conveniently located in the heart of Health City's innovation district.
+              We're conveniently located in the heart of Arlington's innovation district.
             </p>
           </div>
           <div className="h-[400px] w-full overflow-hidden rounded-lg bg-muted">
-          <Image
-              src="/map2.png"
-              alt="Map showing our office location"
-              width={800}
-              height={400}
-              className="object-cover w-full h-full"
-            />
-
-
-            <div className="flex h-full items-center justify-center">
-              <p className="text-muted-foreground">Map would be displayed here</p>
-            </div>
+            <DynamicMap className="h-full w-full" />
           </div>
         </div>
       </section>
