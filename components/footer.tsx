@@ -48,11 +48,13 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">123 Innovation Drive, Health City, HC 12345</span>
+                <span className="text-muted-foreground">4220 Campbell Ave, Arlington VA 22206</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">(123) 456-7890</span>
+                <span className="text-muted-foreground">
+                  <a href="tel:+1240-203-9321">+1 (240)-203-9321</a>
+                </span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
